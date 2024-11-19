@@ -10246,7 +10246,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 5.768
+      value: 7.442
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
       propertyPath: m_LocalPosition.z
@@ -10299,7 +10299,7 @@ PrefabInstance:
       addedObject: {fileID: 2062660457}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2062660455}
+      addedObject: {fileID: 2062660458}
   m_SourcePrefab: {fileID: 100100000, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
 --- !u!1 &2062660448 stripped
 GameObject:
@@ -10354,8 +10354,24 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 64
   m_CollisionDetection: 1
---- !u!136 &2062660455
-CapsuleCollider:
+--- !u!114 &2062660457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062660448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04efba055fadad46b0f95cd2873b200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpForce: 5
+  controlJugador: {fileID: 2062660458}
+  gravityScale: 2
+--- !u!143 &2062660458
+CharacterController:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -10372,25 +10388,14 @@ CapsuleCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.2254076
-  m_Height: 1.7722368
-  m_Direction: 1
-  m_Center: {x: 0.01390934, y: 0.8950238, z: 0}
---- !u!114 &2062660457
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062660448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d04efba055fadad46b0f95cd2873b200, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveSpeed: 10
-  jumpForce: 5
+  serializedVersion: 3
+  m_Height: 2
+  m_Radius: 0.5
+  m_SlopeLimit: 45
+  m_StepOffset: 0.3
+  m_SkinWidth: 0.08
+  m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2064765628
 GameObject:
   m_ObjectHideFlags: 0
