@@ -5144,7 +5144,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 1
 --- !u!1 &1164226994
 GameObject:
@@ -10293,16 +10293,10 @@ PrefabInstance:
       addedObject: {fileID: 2062660449}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
       insertIndex: -1
-      addedObject: {fileID: 2062660453}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2062660452}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2062660451}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
-      insertIndex: -1
       addedObject: {fileID: 2062660454}
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2062660457}
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 0b5008ac8fb2f42489aa2d2e0f6894b5, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2062660455}
@@ -10333,51 +10327,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &2062660451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062660448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41af54aab49d62249842d1b725eb9f7a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
-  jumpForce: 5
-  gravity: 9.81
---- !u!114 &2062660452
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062660448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1e97eaa924969b4a8742fcc1628550b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  groundDistance: 0.3
-  groundMask:
-    serializedVersion: 2
-    m_Bits: 0
---- !u!114 &2062660453
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2062660448}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3869812175467a143ab9cd865752b4a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Avatar: {fileID: 0}
-  Description: {fileID: 0}
 --- !u!54 &2062660454
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -10403,7 +10352,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 64
   m_CollisionDetection: 1
 --- !u!136 &2062660455
 CapsuleCollider:
@@ -10428,6 +10377,20 @@ CapsuleCollider:
   m_Height: 1.7722368
   m_Direction: 1
   m_Center: {x: 0.01390934, y: 0.8950238, z: 0}
+--- !u!114 &2062660457
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2062660448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d04efba055fadad46b0f95cd2873b200, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  moveSpeed: 10
+  jumpForce: 5
 --- !u!1 &2064765628
 GameObject:
   m_ObjectHideFlags: 0
