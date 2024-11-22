@@ -42,14 +42,10 @@ public class PlayerController : MonoBehaviour
         anim.SetBool("isWalking", isWalking);
 
         // Jump
-        if (Input.GetButtonDown("Jump") && controlJugador.isGrounded) // Ensure jumping only works when grounded
+        if (Input.GetButtonDown("Jump")) 
         {
             moveDirection.y = jumpForce;
-            anim.SetBool("isJumping", true);
-        }
-        else
-        {
-            anim.SetBool("isJumping", false);
+           anim.SetTrigger("isJumping");
         }
 
         // Gravity
