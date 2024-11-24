@@ -328,6 +328,7 @@ MonoBehaviour:
   gravityScale: 2
   anim: {fileID: 0}
   playerCamera: {fileID: 1450667196}
+  spawnPoint: {fileID: 1760293640}
 --- !u!143 &305014063
 CharacterController:
   m_ObjectHideFlags: 0
@@ -1315,6 +1316,11 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: -6977790426362404010, guid: f021da2b2f4196545a3053c0e9aad947, type: 3}
+--- !u!1 &720846512 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
+  m_PrefabInstance: {fileID: 1414787336}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &748474352
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1341,7 +1347,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 30.187637
+      value: 31.09
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
       propertyPath: m_LocalRotation.w
@@ -1380,13 +1386,20 @@ PrefabInstance:
       value: HighPolyPlane
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
+      propertyPath: m_TagString
+      value: Water
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1449868544}
   m_SourcePrefab: {fileID: 100100000, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
 --- !u!4 &748474353 stripped
 Transform:
@@ -2576,11 +2589,44 @@ PrefabInstance:
       propertyPath: m_Name
       value: HighPolyPlane
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
+      propertyPath: m_TagString
+      value: Water
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1993333948}
   m_SourcePrefab: {fileID: 100100000, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
+--- !u!1 &1449868541 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
+  m_PrefabInstance: {fileID: 748474352}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1449868544
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1449868541}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.8982228, y: 1.8006048, z: 0.010854992}
+  m_Center: {x: 0.0143835535, y: 0.01215186, z: 0.001245417}
 --- !u!1 &1450667194
 GameObject:
   m_ObjectHideFlags: 0
@@ -3348,6 +3394,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -132.962, z: 0}
+--- !u!1 &1760293639
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1760293640}
+  m_Layer: 0
+  m_Name: SpawnPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1760293640
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1760293639}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -40.45, y: 8.27, z: 222.16}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1826108873 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2484332459726964653, guid: f021da2b2f4196545a3053c0e9aad947, type: 3}
@@ -3820,6 +3897,27 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 44ef6b564a5251c4b9c07e50c18ae260, type: 3}
   m_PrefabInstance: {fileID: 1414787336}
   m_PrefabAsset: {fileID: 0}
+--- !u!65 &1993333948
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 720846512}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.929267, y: 1.9580723, z: 0.01186161}
+  m_Center: {x: -0.035366528, y: 0.020963669, z: -0.0059308265}
 --- !u!1 &2042659614 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7907823607191830577, guid: f021da2b2f4196545a3053c0e9aad947, type: 3}
@@ -3953,3 +4051,4 @@ SceneRoots:
   - {fileID: 2061355279}
   - {fileID: 670720392}
   - {fileID: 1393533098}
+  - {fileID: 1760293640}
