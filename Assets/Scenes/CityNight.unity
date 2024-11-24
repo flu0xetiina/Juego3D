@@ -270,6 +270,7 @@ MonoBehaviour:
   controlJugador: {fileID: 305014063}
   gravityScale: 2
   anim: {fileID: 0}
+  playerCamera: {fileID: 1450667196}
 --- !u!143 &305014063
 CharacterController:
   m_ObjectHideFlags: 0
@@ -399,7 +400,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 386254517}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.071538866, y: -0.54369116, z: -0.046584666, w: 0.8349324}
+  m_LocalRotation: {x: -0.07792593, y: -0.6378989, z: -0.061212346, w: 0.7637183}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -478,7 +479,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 421276611}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.052562993, y: -0.4026649, z: -0.023168331, w: 0.9135433}
+  m_LocalRotation: {x: -0.071538836, y: -0.54369116, z: -0.046584643, w: 0.8349324}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -931,7 +932,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 1.425695, z: -1.5287323}
+  m_FollowOffset: {x: 0, y: 1.3087583, z: -2.1691284}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1249,7 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 1.425695, z: -1.5287323}
+  m_FollowOffset: {x: 0, y: 1.3087583, z: -2.1691284}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -1373,7 +1374,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 960606893}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2940667, y: -0.4400792, z: 0.15514551, w: 0.83413726}
+  m_LocalRotation: {x: 0.1780678, y: -0.5717612, z: 0.13042578, w: 0.79017097}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2006,11 +2007,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450667194}
   serializedVersion: 2
-  m_LocalRotation: {x: -0.07207984, y: -0.5338696, z: -0.045743115, w: 0.8412463}
-  m_LocalPosition: {x: 32.947193, y: 7.2256937, z: 87.64974}
+  m_LocalRotation: {x: -0.06633791, y: -0.41055962, z: -0.029964745, w: 0.9089237}
+  m_LocalPosition: {x: 33.467148, y: 7.108757, z: 87.2759}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1974141979}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1450667198
@@ -2347,7 +2349,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_BindingMode: 5
-  m_FollowOffset: {x: 0, y: 1.425695, z: -1.5287323}
+  m_FollowOffset: {x: 0, y: 1.3087583, z: -2.1691284}
   m_XDamping: 1
   m_YDamping: 1
   m_ZDamping: 1
@@ -2767,7 +2769,7 @@ MonoBehaviour:
         m_Calls: []
   m_LegacyBlendHint: 0
   m_YAxis:
-    Value: 1
+    Value: 0.5
     m_SpeedMode: 0
     m_MaxSpeed: 2
     m_AccelTime: 0.2
@@ -2821,12 +2823,12 @@ MonoBehaviour:
   m_BindingMode: 5
   m_SplineCurvature: 0.2
   m_Orbits:
-  - m_Height: 1.425695
-    m_Radius: 1.5287323
-  - m_Height: 1.4107575
+  - m_Height: 1.9192262
+    m_Radius: 1.3586235
+  - m_Height: 1.3087583
     m_Radius: 2.1691284
-  - m_Height: 1.4222683
-    m_Radius: 1.3918617
+  - m_Height: 0.67622423
+    m_Radius: 1.3512275
   m_LegacyHeadingBias: 3.4028235e+38
   m_Rigs:
   - {fileID: 386254518}
@@ -2840,15 +2842,15 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1974141977}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: 0.0117184315, z: -0, w: 0.99993134}
-  m_LocalPosition: {x: 32.947193, y: 7.2256937, z: 87.64974}
+  m_LocalRotation: {x: 0.07153885, y: 0.54369104, z: 0.046584636, w: 0.83493245}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 386254519}
   - {fileID: 421276613}
   - {fileID: 960606895}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 1450667197}
   m_LocalEulerAnglesHint: {x: 0, y: 1.343, z: 0}
 --- !u!4 &1993333945 stripped
 Transform:
@@ -2905,6 +2907,5 @@ SceneRoots:
   - {fileID: 1902684249}
   - {fileID: 1157613607}
   - {fileID: 2061355279}
-  - {fileID: 1974141979}
   - {fileID: 670720392}
   - {fileID: 1393533098}
