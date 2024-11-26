@@ -4,7 +4,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
-{   public Instance GameController;
+{   public static GameController instance;
     public GameObject Player;
     public GameObject SpawnPoint;
     // Start is called before the first frame update

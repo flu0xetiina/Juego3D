@@ -9,7 +9,7 @@ public class TriggerColliderDetector : MonoBehaviour
         if (other.tag == "Player")
         {
             Debug.Log("Player has entered the trigger zone.");
-            GameController.Respawn();
+            GameController.instance.Respawn();
         }
     }
 
