@@ -1,28 +1,41 @@
-using System.Collections;
-using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class GameController : MonoBehaviour
-{   public static GameController instance;
-    public GameObject Player;
-    public GameObject SpawnPoint;
-    // Start is called before the first frame update
-    void Start()
+{
+    public static GameController instance;
+    public Transform spawnPoint;
+
+    private void Awake()
     {
-        
+        if (instance == null)
+        {
+            instance = this;
+            DontDestroyOnLoad(gameObject); // Optional: Makes the GameController persist across scenes
+        }
+        else
+        {
+            Destroy(gameObject); // Prevent multiple instances
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    public void Respawn()
     {
-        
+        GameObject player = GameObject.FindWithTag("Player");
+        if (player != null)
+        {
+            PlayerController playerController = player.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.Respawn(); // Use PlayerController's respawn logic
+            }
+            else
+            {
+                Debug.LogError("PlayerController component is missing on the Player object.");
+            }
+        }
+        else
+        {
+            Debug.LogError("No Player object found with the 'Player' tag.");
+        }
     }
-
-    public void Respawn (){
-        Destroy(GameObject.FindWithTag("Player"));
-        Instantiate(Player, SpawnPoint.transform.position, SpawnPoint.transform.rotation);
-       
-    }
-
 }

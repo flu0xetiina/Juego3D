@@ -2,15 +2,22 @@ using UnityEngine;
 
 public class TriggerColliderDetector : MonoBehaviour
 {
-    // This will be called when another collider enters the trigger
     private void OnTriggerEnter(Collider other)
     {
-        // Check if the object that entered the trigger has a specific tag
-        if (other.tag == "Player")
+        if (other.CompareTag("Player")) // Check for "Player" tag
         {
-            Debug.Log("Player has entered the trigger zone.");
-            GameController.instance.Respawn();
+            Debug.Log("Player entered the trigger zone.");
+
+            // Get the PlayerController component and call Respawn
+            PlayerController playerController = other.GetComponent<PlayerController>();
+            if (playerController != null)
+            {
+                playerController.Respawn();
+            }
+            else
+            {
+                Debug.LogError("PlayerController is missing on the Player object.");
+            }
         }
     }
-
 }
