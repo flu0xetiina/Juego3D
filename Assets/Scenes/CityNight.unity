@@ -515,7 +515,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 5
-  jumpForce: 6
+  jumpForce: 8
   controlJugador: {fileID: 305014063}
   gravityScale: 2
   anim: {fileID: 0}

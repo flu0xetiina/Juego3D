@@ -14,59 +14,91 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;  
     public Transform spawnPoint;
 
-
     void Start()
     {
+        if (controlJugador == null)
+        {
+            controlJugador = GetComponent<CharacterController>();
+        }
+
         if (anim == null)
         {
             anim = GetComponent<Animator>();
         }
+
+        if (playerCamera == null)
+        {
+            Debug.LogError("Player Camera is not assigned. Please assign a Camera in the Inspector.");
+        }
     }
 
     void Update()
-    {   
+    {
         yStore = moveDirection.y;
 
+        // Movement
         moveDirection = new Vector3(Input.GetAxisRaw("Horizontal"), 0f, Input.GetAxisRaw("Vertical"));
         moveDirection = moveDirection * moveSpeed;
-        controlJugador.Move(moveDirection * Time.deltaTime);
         moveDirection.y = yStore;
 
-        bool isWalking = moveDirection.x != 0 || moveDirection.z != 0;
+        // Apply movement
+        controlJugador.Move(moveDirection * Time.deltaTime);
 
+        // Animation
+        bool isWalking = moveDirection.x != 0 || moveDirection.z != 0;
         anim.SetBool("isWalking", isWalking);
 
-        if (Input.GetButtonDown("Jump")) 
-        {
-            moveDirection.y = jumpForce;
-           anim.SetTrigger("isJumping");
-        }
+  
 
-        
+ if (controlJugador.isGrounded)
+{
+    // Reset vertical velocity when grounded
+    moveDirection.y = 0f;
+
+    // Check if Jump button is pressed
+    if (Input.GetButtonDown("Jump"))
+    {
+        moveDirection.y = jumpForce;
+        anim.SetTrigger("isJumping");  // Use SetTrigger instead of SetBool to trigger the jump animation
+    }
+}
+
 
         // Gravity
         moveDirection.y += Physics.gravity.y * Time.deltaTime * gravityScale;
-        controlJugador.Move(moveDirection * Time.deltaTime);
 
-        transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
+        // Camera alignment
+        if (playerCamera != null)
+        {
+            transform.rotation = Quaternion.Euler(0f, playerCamera.transform.rotation.eulerAngles.y, 0f);
+        }
     }
-
 
     void OnControllerColliderHit(ControllerColliderHit hit)
     {
         if (hit.collider.CompareTag("Water"))
-        {   Debug.Log("el personaje ha tocado agua");
+        {
+            Debug.Log("The player has touched water");
             Respawn();
         }
     }
 
-    // Método de respawn
     void Respawn()
     {
-        controlJugador.enabled = false; // Desactivar CharacterController temporalmente
-        transform.position = spawnPoint.position; // Mover al punto de respawn
-        controlJugador.enabled = true; // Reactivar CharacterController
-        moveDirection = Vector3.zero; // Resetear movimiento
+        if (spawnPoint == null)
+        {
+            Debug.LogError("Spawn Point not set! Please assign a spawn point in the Inspector.");
+            return;
+        }
+
+        controlJugador.enabled = false; 
+        transform.position = spawnPoint.position; 
+        controlJugador.enabled = true; 
+        moveDirection = Vector3.zero;
     }
+
+
+
+
 
 }
