@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     public Camera playerCamera;  
     public Transform spawnPoint;
 
+    
+
     void Start()
     {
         if (controlJugador == null)
@@ -74,16 +76,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void OnControllerColliderHit(ControllerColliderHit hit)
-    {
-        if (hit.collider.CompareTag("Water"))
-        {
-            Debug.Log("The player has touched water");
-            Respawn();
-        }
-    }
 
-    void Respawn()
+
+  public void Respawn()
     {
         if (spawnPoint == null)
         {
