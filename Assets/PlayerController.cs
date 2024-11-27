@@ -1,3 +1,5 @@
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerController : MonoBehaviour
@@ -104,19 +106,56 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void Respawn()
+private bool isDead = false;
+public void Respawn()
+{
+    if (isDead) return; // Prevent multiple respawn calls
+    isDead = true;
+
+    if (anim != null)
     {
-        if (spawnPoint == null)
-        {
-            Debug.LogError("Spawn Point is not set! Please assign a spawn point in the Inspector.");
-            return;
-        }
+        anim.SetTrigger("isDead"); // Trigger the death animation
 
-        controlJugador.enabled = false; // Disable control to avoid conflicts
-        transform.position = spawnPoint.position;
-        controlJugador.enabled = true; // Re-enable after teleporting
-        moveDirection = Vector3.zero;
-
-        Debug.Log("Player respawned successfully.");
+        // Start respawn coroutine with the animation duration
+        StartCoroutine(RespawnAfterAnimation());
     }
+    else
+    {
+        Debug.LogError("Animator component is missing!");
+        StartCoroutine(RespawnAfterAnimation()); // Fallback if no animation exists
+    }
+}
+
+private IEnumerator RespawnAfterAnimation()
+{
+    // Wait for the animation to play
+    AnimatorStateInfo stateInfo = anim.GetCurrentAnimatorStateInfo(0);
+    float animationDuration = stateInfo.length; // Get the duration of the "isDead" animation
+    yield return new WaitForSeconds(animationDuration); // Wait for the animation to finish
+
+    // Proceed with the respawn logic
+    RespawnLogic();
+}
+
+private void RespawnLogic()
+{
+    // Reset player position to the spawn point
+    if (spawnPoint == null)
+    {
+        Debug.LogError("Spawn Point is not set! Please assign a spawn point in the Inspector.");
+    }
+    else
+    {
+        transform.position = spawnPoint.position; // Move the player to the spawn point
+    }
+
+    // Reset movement and re-enable controls
+    moveDirection = Vector3.zero;
+    moveDirection.y = 0f; // Ensure vertical velocity is reset
+    controlJugador.enabled = true; // Re-enable the character controller
+    isDead = false; // Allow the player to die again
+    Debug.Log("Player respawned successfully.");
+}
+
+
 }

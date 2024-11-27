@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d04efba055fadad46b0f95cd2873b200, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 5
+  moveSpeed: 8
   jumpForce: 8
   gravityScale: 2
   controlJugador: {fileID: 305014063}
